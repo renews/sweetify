@@ -1,5 +1,7 @@
 <% if flash[:sweetify].present? %>
     <script>
-      <%= Sweetify.render(flash[:sweetify]) %>
+        document.addEventListener("turbolinks:load", () => {
+            <%= Sweetify.render(flash[:sweetify]) %>
+        })
     </script>
 <% end %>
