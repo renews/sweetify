@@ -1,7 +1,7 @@
 module Sweetify
   module SweetAlert
     # Display an alert with a text and an optional title
-    # Default without an specific type
+    # Default without an specific icon
     #
     # @param [String] text Body of the alert (gets automatically the title if no title is specified)
     # @param [String] title Title of the alert
@@ -35,7 +35,7 @@ module Sweetify
 
       # sweetalert changes
       if Sweetify.sweetalert_library == 'sweetalert'
-        opts[:icon] = opts.delete(:type)
+        opts[:icon] = opts.delete(:icon)
         opts[:closeOnClickOutside] = opts.delete(:allowOutsideClick)
 
         if opts.delete(:showConfirmButton)
@@ -54,7 +54,7 @@ module Sweetify
     # @param [String] title Title of the alert
     # @param [Hash] opts Optional Parameters
     def sweetalert_info(text, title = '', opts = {})
-      opts[:type] = :info
+      opts[:icon] = :info
       sweetalert(text, title, opts)
     end
 
@@ -64,7 +64,7 @@ module Sweetify
     # @param [String] title Title of the alert
     # @param [Hash] opts Optional Parameters
     def sweetalert_success(text, title = '', opts = {})
-      opts[:type] = :success
+      opts[:icon] = :success
       sweetalert(text, title, opts)
     end
 
@@ -74,7 +74,7 @@ module Sweetify
     # @param [String] title Title of the alert
     # @param [Hash] opts Optional Parameters
     def sweetalert_error(text, title = '', opts = {})
-      opts[:type] = :error
+      opts[:icon] = :error
       sweetalert(text, title, opts)
     end
 
@@ -84,7 +84,7 @@ module Sweetify
     # @param [String] title Title of the alert
     # @param [Hash] opts Optional Parameters
     def sweetalert_warning(text, title = '', opts = {})
-      opts[:type] = :warning
+      opts[:icon] = :warning
       sweetalert(text, title, opts)
     end
 
