@@ -1,7 +1,5 @@
 <% if flash[:sweetify].present? %>
-    <script>
-        document.addEventListener("turbolinks:load", () => {
-            <%= Sweetify.render(flash[:sweetify]) %>
-        })
-    </script>
+  <script data-turbolinks-track="reload">
+    <%= Sweetify.render(flash[:sweetify]) %>
+  </script>
 <% end %>
