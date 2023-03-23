@@ -7,7 +7,7 @@ module Sweetify
     end
 
     def render(json)
-      (sweetalert_library == 'sweetalert2' ? "Swal.fire(#{json})" : "swal(#{json})").html_safe
+      (sweetalert_library == 'sweetalert2' ?) "Swal.fire(#{json.html_safe})" : "swal(#{json.html_safe})"
     end
   end
 end
