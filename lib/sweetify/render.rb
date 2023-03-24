@@ -9,8 +9,7 @@ module Sweetify
     end
 
     def render(json)
-      json = json.html_safe
-      sweetalert_library == 'sweetalert2' ? "Swal.fire(#{json})" : "swal(#{json})"
+      (sweetalert_library == 'sweetalert2' ? "Swal.fire(#{json})" : "swal(#{json})").html_safe
     end
   end
 end
