@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Sweetify
   class << self
     attr_writer :sweetalert_library
@@ -7,7 +9,8 @@ module Sweetify
     end
 
     def render(json)
-      ((sweetalert_library == 'sweetalert2') ? "Swal.fire(#{json.html_safe})" : "swal(#{json.html_safe})")
+      json = json.html_safe
+      sweetalert_library == 'sweetalert2' ? "Swal.fire(#{json})" : "swal(#{json})"
     end
   end
 end
